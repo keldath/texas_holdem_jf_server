@@ -5,7 +5,8 @@ class StandardDeck:
 
     def __init__(self):
         self.Cards = []
-        self.basic_values = list(range(2, 15))  # 2-14
+        self.basic_values = list(range(2, 10))  # 2-9
+        self.top_cards = ['T', 'J', 'Q', 'K', 'A']
         # order is by suit REVERSE rank (spades highest)
         self.basic_suits = ['c', 'd', 'h', 's']
 
@@ -20,11 +21,9 @@ class StandardDeck:
         # zip is cleaner code to loop over more than one list
         for suit in self.basic_suits:
             for val in self.basic_values:
-                # strip the suit initial
-                # each card is a sub list of [card number, suit, suit rank]
-                if val == 10:
-                    val = 'T'
-                self.Cards.append(str(val) + suit[0])
+                self.Cards.append(str(val) + suit)
+            for val in self.top_cards:
+                self.Cards.append(str(val) + suit)
 
         self.shuffleDeck()
         # error handle of allowed deck size

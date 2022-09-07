@@ -30,8 +30,8 @@ def manual_test():
 
 
 if __name__ == '__main__':
-    #init_app = App()
-    #uvicorn.run("server:App", host="localhost", port=8080, reload=True)
+    init_app = App()
+    uvicorn.run("server:App", host="localhost", port=8080, reload=True)
     # manual test
-    manual_test()
+    #manual_test()
 
