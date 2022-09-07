@@ -55,14 +55,14 @@ class App(FastAPI):
             self.state.all_hands = PlayersHands(self.state.comm_cards.updated_deck)
             self.state.all_hands.DealCards()
             self.state.all_hands.updated_deck = self.state.all_hands.updated_deck
-            self.state.all_hands_players_hands = self.state.all_hands.players_hands
+            self.state.all_hands_player_hand = self.state.all_hands.player_hand
             self.state.data.update(
                 {"deck": self.state.deck_cards,
                  "cards_left": len(self.state.all_hands.updated_deck),
                  "updated_deck": self.state.all_hands.updated_deck,
                  "comm_cards": self.state.comm_dealt_cards,
                  # note - 0 means player 1, this is a future option for more players
-                 "player_hand": self.state.all_hands_players_hands}
+                 "player_hand": self.state.all_hands_player_hand}
             )
             return self.state.data
 
@@ -83,7 +83,7 @@ class App(FastAPI):
         self.state.updated_deck = ''
         self.state.comm_dealt_cards = ''
         self.state.all_hands = ''
-        self.state.all_hands_players_hands = ''
+        self.state.all_hands_player_hand = ''
 
         self.state.data = {
             "cards_left": '',

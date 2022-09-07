@@ -23,7 +23,7 @@ def manual_test():
     all_hands = PlayersHands(comm_cards.updated_deck)
     all_hands.DealCards()
     # print(all_hands.updated_deck)  # deck post player deal
-    # print(all_hands.players_hands)
+    # print(all_hands.player_hand)
 
     # in case we have more than one player (not in the requirement)
     best_hand_check(all_hands.player_hand, comm_cards.dealt_cards)
