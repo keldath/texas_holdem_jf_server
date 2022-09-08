@@ -62,7 +62,7 @@ def best_hand_check(player, comm):
     print(best_hand)
     print(best_rank)
     print(best_hand_type)
-
+    print([best_hand, best_hand_type])
     return [best_hand, best_hand_type]
 
 

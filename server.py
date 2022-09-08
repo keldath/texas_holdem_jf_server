@@ -69,9 +69,8 @@ class App(FastAPI):
         @self.get('/best_hand')
         async def best():
             self.state.data.update(
-                {'Winning_hand':
-                     best_hand_check(self.state.all_hands.player_hand,
-                                     self.state.comm_dealt_cards)
+                {'winning_hand': best_hand_check(self.state.all_hands.player_hand,
+                        self.state.comm_dealt_cards)
                  }
             )
             return self.state.data
@@ -91,5 +90,5 @@ class App(FastAPI):
             'updated_deck': '',
             'comm_cards': '',
             'player_hand': '',
-            'Winning_hand': ''
+            'winning_hand': ''
         }
