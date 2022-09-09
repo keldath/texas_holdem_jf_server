@@ -1,10 +1,13 @@
 
-from deck import StandardDeck
-from deal import PlayersHands, CommunityCards
-from handevaluator import best_hand_check
-import uvicorn
-from server import App
+from pathlib import Path
+import sys
+from cards.deck import StandardDeck
+from cards.deal import PlayersHands, CommunityCards
+from cards.handevaluator import best_hand_check
 
+# add py path tp system path
+path_root = Path(__file__).parents[2]
+sys.path.append(str(path_root))
 
 def manual_test():
 
@@ -30,8 +33,5 @@ def manual_test():
 
 
 if __name__ == '__main__':
-    init_app = App()
-    uvicorn.run("server:App", host="localhost", port=8080, reload=True)
-    # manual test
-    #manual_test()
+    manual_test()
 

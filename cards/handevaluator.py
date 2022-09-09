@@ -1,10 +1,12 @@
 
+
 from treys import Card
 from treys import Evaluator
 from itertools import combinations
+from typing import List
 
 
-def best_hand_check(player, comm):
+def best_hand_check(player: List[str], comm: List[str]) -> list:
     """
         built on Evaluator and combinations
         this func will rank all the possible combos
@@ -24,7 +26,7 @@ def best_hand_check(player, comm):
     for co in combo_iter:
         all_combos.append(co)
 
-    def parser(cards):
+    def parser(cards: list):
         parsed = []
         for card in cards:
             parsed.append(Card.new(card))
