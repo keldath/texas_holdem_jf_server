@@ -68,7 +68,6 @@ class App(FastAPI):
             create_deck()  # new game every deal of the community cards
             return deal_cards_all(self.state.data['updated_deck'], 5)
 
-
         @self.get('/deal_player')
         async def player():
             return deal_cards_all(self.state.data['updated_deck'], 2)
