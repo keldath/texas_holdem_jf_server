@@ -2,8 +2,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from cards.deck import StandardDeck
-from cards.deal import deal_cards
-from cards.handevaluator import best_hand_check
+from tests.archive.deal import deal_cards
+from cards.best_hand_handler import best_hand_check
 from typing import List
 
 
@@ -69,7 +69,7 @@ class App(FastAPI):
             return deal_cards_all(self.state.data['updated_deck'], 5)
 
         @self.get('/deal_player')
-        async def player():
+        async def player(pa):
             return deal_cards_all(self.state.data['updated_deck'], 2)
 
         @self.get('/best_hand')

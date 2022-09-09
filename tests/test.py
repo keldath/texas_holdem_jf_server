@@ -1,9 +1,9 @@
 
 from pathlib import Path
 import sys
-from cards.deck import StandardDeck
-from cards.deal import PlayersHands, CommunityCards
-from cards.handevaluator import best_hand_check
+from cards.cards_handler import StandardDeck
+from tests.archive.deal import PlayersHands, CommunityCards
+from cards.best_hand_handler import best_hand_check
 
 # add py path tp system path
 path_root = Path(__file__).parents[2]

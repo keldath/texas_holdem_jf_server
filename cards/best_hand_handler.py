@@ -61,9 +61,6 @@ def best_hand_check(player: List[str], comm: List[str]) -> list:
             best_hand = combo_cards_of_player + combo_cards_of_comm
             best_hand_type = hand_type
 
-    print(best_hand)
-    print(best_rank)
-    print(best_hand_type)
     print([best_hand, best_hand_type])
     return [best_hand, best_hand_type]
 

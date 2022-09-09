@@ -29,5 +29,3 @@ class StandardDeck:
         # error handle of allowed deck size
         if len(self.Cards) != 52:
             raise Exception("Deck Size is not 52")
-
-
