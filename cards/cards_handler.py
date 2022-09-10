@@ -27,6 +27,12 @@ def deal_cards(dealt: List[str], amount: int) -> list:
             cards.append(pick_a_card)
             drew += 1
 
+    # this is a double check for the deck and the cards
+    # cannot happen but worthwhile to verify
+    for card in cards:
+        if card in deck:
+            raise Exception("Error -> Duplicate card found")
+
     return cards
 
 
