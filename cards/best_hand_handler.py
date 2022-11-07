@@ -28,8 +28,8 @@ def best_hand_check(player: List[str], comm: List[str]) -> list:
 
     def parser(cards: list):
         parsed = []
-        for card in cards:
-            parsed.append(Card.new(card))
+        for _card in cards:
+            parsed.append(Card.new(_card))
         return parsed
     # print(player, comm)
     # worst hand according to the treys rank system is 7462

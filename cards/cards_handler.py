@@ -23,7 +23,7 @@ def deal_cards(dealt: List[str], amount: int) -> list:
     while drew < amount:
         pick_a_card = random.choice(deck)
         deck.remove(pick_a_card)  # for the next iteration
-        if pick_a_card not in dealt: # no need for cards drew b4
+        if pick_a_card not in dealt:  # no need for cards drew b4
             cards.append(pick_a_card)
             drew += 1
 
